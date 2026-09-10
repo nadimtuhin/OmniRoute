@@ -47,6 +47,12 @@ export const freebuffProvider: RegistryEntry = {
       contextLength: 131_072,
     },
     {
+      id: "z-ai/glm-5.3-flash",
+      name: "GLM 5.3 Flash",
+      supportsReasoning: true,
+      contextLength: 131_072,
+    },
+    {
       id: "crof/kimi-k3-eco",
       name: "Kimi K3 Eco",
       supportsVision: true,
