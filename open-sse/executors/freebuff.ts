@@ -141,6 +141,9 @@ export class FreebuffExecutor extends BaseExecutor {
     } catch {}
 
     // 3. Prepare Chat Payload & Buffy System Prompt
+    // Freebuff upstream rejects external tool schemas on free tier with 404 No endpoints found
+    delete payload.tools;
+    delete payload.tool_choice;
     const incomingMessages: Array<Record<string, unknown>> = Array.isArray(payload.messages)
       ? payload.messages.filter(
           (message): message is Record<string, unknown> =>
